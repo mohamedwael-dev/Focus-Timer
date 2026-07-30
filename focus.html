@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Timer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"/>
+  </head>
+  <body>
+    <header>
+      <div class="hero">
+        <h1>Focus Today,<br />Succeed Tomorrow</h1>
+
+        <p class="slogan">"Focus Today... Succeed Tomorrow."</p>
+
+        <p class="target">
+          Our mission is to help students overcome distractions during studying,
+          improve concentration, and develop smart study habits that lead to
+          better academic performance and greater confidence.
+        </p>
+
+        <a href="#procrastination" class="btn">Start Learning</a>
+      </div>
+    </header>
+
+    <section id="procrastination">
+      <h2>🧠 Procrastination Detector</h2>
+
+      <p>AI monitors your study habits and helps you stay focused.</p>
+
+      <div class="procrastination-box">
+        <div class="warning-icon">⚠️</div>
+
+        <h3 id="message">You are focused! Keep going 💪</h3>
+
+        <p>
+          Distractions:
+          <span id="exitCount">0</span>
+          times
+        </p>
+
+        <button onclick="enableFocusMode()">🔒 Enable Focus Mode</button>
+      </div>
+    </section>
+
+    <section id="timer">
+      <h2>🎯 Focus Timer</h2>
+
+      <div class="timer-box">
+        <h1 id="time">45:00</h1>
+
+        <div class="buttons">
+          <button onclick="startTimer()">Start</button>
+          <button onclick="pauseTimer()">Pause</button>
+          <button onclick="resetTimer()">Reset</button>
+        </div>
+
+        <p>Stay focused until the timer ends!</p>
+      </div>
+    </section>
+    <section><a id="emergency" href="emergency.html">
+
+   🚨 Emergency Button
+
+</a></section>
+    <section id="break">
+      <h2>☕ Break Time</h2>
+
+      <p class="break-text">
+        Great job! You completed a focus session. Take a 10-minute break to
+        recharge your mind.
+      </p>
+
+      <div class="break-box">
+        <h1 id="breakTime">10:00</h1>
+
+        <div class="break-buttons">
+          <button onclick="startBreak()">▶ Start Break</button>
+          <button onclick="pauseBreak()">⏸ Pause</button>
+          <button onclick="resetBreak()">🔄 Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="suggestion-title">💡 Healthy Break Ideas</h3>
+
+      <div class="suggestions">
+        <div class="suggestion">
+          <span>🚶</span>
+          <h4>Take a Walk</h4>
+          <p>Walk around your room or outside for a few minutes.</p>
+        </div>
+
+        <div class="suggestion">
+          <span>💧</span>
+          <h4>Drink Water</h4>
+          <p>Stay hydrated to keep your brain active.</p>
+        </div>
+
+        <div class="suggestion">
+          <span>🧘</span>
+          <h4>Stretch</h4>
+          <p>Relax your neck, shoulders, and back with simple stretches.</p>
+        </div>
+
+        <div class="suggestion">
+          <span>👀</span>
+          <h4>Rest Your Eyes</h4>
+          <p>Look at something 20 feet away for 20 seconds.</p>
+        </div>
+
+        <div class="suggestion">
+          <span>🍎</span>
+          <h4>Healthy Snack</h4>
+          <p>Eat fruit or nuts instead of junk food.</p>
+        </div>
+
+        <div class="suggestion">
+          <span>🌬️</span>
+          <h4>Deep Breathing</h4>
+          <p>Take slow deep breaths to reduce stress.</p>
+        </div>
+
+        <div class="suggestion">
+          <span>🎧</span>
+          <h4>Listen to Music</h4>
+          <p>Listen to calm music to relax your mind and reduce stress.</p>
+        </div>
+
+        <div class="suggestion">
+          <span>📝</span>
+          <h4>Plan Your Tasks</h4>
+          <p>Write your next study goals and organize your upcoming tasks.</p>
+        </div>
+
+        <div class="suggestion">
+          <span>🌳</span>
+          <h4>Get Fresh Air</h4>
+          <p>Open a window or go outside for fresh air and energy.</p>
+        </div>
+
+        <div class="suggestion">
+          <span>😊</span>
+          <h4>Positive Thinking</h4>
+          <p>Take a moment to relax, reflect, and motivate yourself.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tips">
+      <h2>Study Tips</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>🎯 Set Small Goals</h3>
+          <p>
+            Break large tasks into smaller goals and reward yourself after
+            completing them.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>😴 Sleep Well</h3>
+          <p>
+            Getting enough sleep improves memory, focus, and learning ability.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>💧 Stay Healthy</h3>
+          <p>
+            Drink water, eat healthy snacks, and exercise regularly to keep your
+            brain active.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>📚 Review Daily</h3>
+          <p>
+            Review what you've learned every day to strengthen long-term memory.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="ai-assistant">
+      <h2>🤖 AI Study Assistant</h2>
+
+      <p class="ai-description">
+        After every study session, your AI assistant helps you review, test your
+        knowledge, and measure your understanding.
+      </p>
+
+      <div class="ai-box">
+        <h3>What did you study today? 📚</h3>
+
+        <input
+          type="text"
+          id="lesson"
+          placeholder="Example: Photosynthesis, Algebra, History..."
+        />
+
+        <h3>Explain the lesson ✍️</h3>
+
+        <textarea
+          id="explanation"
+          placeholder="Explain what you learned..."
+        ></textarea>
+
+        <button onclick="generateQuiz()">Create My Exam 🤖</button>
+
+        <div id="quiz"></div>
+
+        <div id="result"></div>
+      </div>
+    </section>
+    <section id="focus-tree">
+      <h2>🌳 Focus Tree</h2>
+
+      <p>
+        Every hour of studying helps your tree grow. Leave the app and your tree
+        will die!
+      </p>
+
+      <div class="tree-box">
+        <div id="tree">🌱</div>
+
+        <h3 id="status">Your tree is growing...</h3>
+
+        <p>
+          Study Time:
+          <span id="hours">0</span> Hours
+        </p>
+
+        <button onclick="startGrowing()">🌱 Start Studying</button>
+      </div>
+    </section>
+    <section id="ai-summary">
+      <h2>📄 AI PDF Summarizer</h2>
+
+      <p class="summary-desc">
+        Upload your study PDF and AI will summarize it, create flashcards, and
+        generate a quiz for you.
+      </p>
+
+      <div class="upload-box">
+        <label for="pdfFile"> 📂 Upload Your PDF </label>
+
+        <input type="file" id="pdfFile" accept=".pdf" />
+
+        <button onclick="analyzePDF()">🤖 Analyze PDF</button>
+
+        <div class="results">
+          <div class="result-card">
+            <h3>📝 Summary</h3>
+
+            <p id="summary">Your AI summary will appear here...</p>
+          </div>
+
+          <div class="result-card">
+            <h3>🃏 Flashcards</h3>
+
+            <p id="flashcards">AI flashcards will appear here...</p>
+          </div>
+
+          <div class="result-card">
+            <h3>❓ Quiz</h3>
+
+            <p id="quizAI">AI questions will appear here...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="study-room">
+      <h2>👥 Study Room</h2>
+
+      <p class="room-desc">
+        Study together with your friends and stay motivated. See who is focused
+        and who left the room!
+      </p>
+
+      <div class="room-box">
+        <div class="create-room">
+          <input id="roomName" placeholder="Enter room name" />
+
+          <button onclick="joinRoom()">🚀 Join Room</button>
+        </div>
+
+        <h3 id="roomTitle">No Room Joined</h3>
+
+        <div class="friends">
+          <div class="friend studying">
+            <span>🟢</span>
+
+            <h3>Ahmed</h3>
+
+            <p>Studying 📚</p>
+          </div>
+
+          <div class="friend finished">
+            <span>🏆</span>
+
+            <h3>Mohamed</h3>
+
+            <p>Finished ✅</p>
+          </div>
+
+          <div class="friend left">
+            <span>😂</span>
+
+            <h3>Ali</h3>
+
+            <p>Left Room (Cheater)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <h3>Focus Today, Succeed Tomorrow</h3>
+      <p>Helping students stay focused and achieve their goals.</p>
+          </div>
+        <div class="text-center">
+        Designed & Developed by <strong>Mohamed Wael</strong>
+    </div>
+    </footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>
+

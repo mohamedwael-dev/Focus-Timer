@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7 Min Before Start</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Poppins, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background: linear-gradient(135deg, #020617, #1e293b);
+
+        color: white;
+      }
+
+      .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 45px;
+        border-radius: 25px;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      }
+
+      h1 {
+        font-size: 38px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        color: #cbd5e1;
+        margin-bottom: 35px;
+      }
+
+      .circle {
+        width: 260px;
+        height: 260px;
+
+        border-radius: 50%;
+
+        background: conic-gradient(
+          #38bdf8 0deg,
+          #38bdf8 360deg,
+          #334155 360deg
+        );
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 30px auto;
+      }
+
+      .circle-inner {
+        width: 220px;
+        height: 220px;
+
+        border-radius: 50%;
+
+        background: #020617;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 55px;
+        font-weight: bold;
+        color: #38bdf8;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      button {
+        padding: 14px 30px;
+
+        border: none;
+        border-radius: 50px;
+
+        background: #0284c7;
+        color: white;
+
+        font-size: 16px;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background: #0ea5e9;
+        transform: translateY(-4px);
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          width: 90%;
+          padding: 30px;
+        }
+
+        .circle {
+          width: 220px;
+          height: 220px;
+        }
+
+        .circle-inner {
+          width: 180px;
+          height: 180px;
+
+          font-size: 45px;
+        }
+
+        .buttons {
+          flex-direction: column;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+      #skip{
+        color:white;
+        font-size:25px;
+        text-decoration: none;
+      }
+      .a{
+        margin-top: 30px;
+      }
+      footer {
+        background: rgba(255,255,255,.05);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,.1);
+        border-radius: 16px;  color: white;
+        width:100%;
+        text-align: center;
+        padding: 25px;
+        margin-top:160px;
+    }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>☕ 7 Minutes To Start</h1>
+
+      <p>Relax your mind before starting another focus session.</p>
+
+      <div class="circle" id="circle">
+        <div class="circle-inner" id="timer">07:00</div>
+      </div>
+
+      <div class="buttons">
+        <button onclick="startTimer()">▶ Start</button>
+
+        <button onclick="pauseTimer()">⏸ Pause</button>
+
+        <button onclick="resetTimer()">🔄 Reset</button>
+      </div>
+
+      <div class="a"><a href="focus.html" id="skip">Skip</a></div>
+
+    </div>
+
+        <footer>
+      <h3>Focus Today, Succeed Tomorrow</h3>
+      <p>Helping students stay focused and achieve their goals.</p>
+          </div>
+        <div class="text-center">
+        Designed & Developed by <strong>Mohamed Wael</strong>
+    </div>
+    </footer>
+
+    <script>
+      let time = 7 * 60;
+      let timer = null;
+
+      function updateTimer() {
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+
+        document.getElementById("timer").textContent =
+          `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+
+        let progress = ((7 * 60 - time) / (7 * 60)) * 360;
+
+        document.getElementById("circle").style.background = `conic-gradient(
+        #38bdf8 ${progress}deg,
+        #334155 ${progress}deg
+    )`;
+      }
+
+      function startTimer() {
+        if (timer) return;
+
+        timer = setInterval(() => {
+          if (time > 0) {
+            time--;
+            updateTimer();
+          } else {
+            clearInterval(timer);
+            timer = null;
+
+            alert("🎉 Break finished! Back to focus.");
+
+            window.location.href = "focus.html";
+          }
+        }, 1000);
+      }
+
+      function pauseTimer() {
+        clearInterval(timer);
+        timer = null;
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        timer = null;
+
+        time = 7 * 60;
+
+        updateTimer();
+      }
+
+      updateTimer();
+    </script>
+  </body>
+</html>

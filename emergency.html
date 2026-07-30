@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FocusMind Emergency Button</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+
+body{
+
+    min-height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+
+    background:#0f172a;
+
+    color:white;
+
+}
+
+
+
+.container{
+
+    width:90%;
+    max-width:600px;
+
+    text-align:center;
+
+    background:#1e293b;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+
+}
+
+
+
+h1{
+
+    margin-bottom:20px;
+
+}
+
+
+
+button{
+
+    margin-top:25px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ef4444;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+button:hover{
+
+    background:#dc2626;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+
+#emergencySuggestion{
+
+    margin-top:30px;
+
+}
+
+
+
+.suggestion{
+
+    background:#334155;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    animation:show .4s ease;
+
+}
+
+
+
+.suggestion span{
+
+    font-size:50px;
+
+}
+
+
+
+.suggestion h3{
+
+    margin:15px 0;
+
+    color:#38bdf8;
+
+}
+
+
+
+.suggestion p{
+
+    color:#cbd5e1;
+
+    line-height:1.6;
+
+}
+
+
+
+@keyframes show{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+      footer {
+        background: rgba(255,255,255,.05);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,.1);
+        border-radius: 16px;  color: white;
+        width:100%;
+        text-align: center;
+        padding: 25px;
+        margin-top:300px;
+    }
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>🚨 Emergency Button</h1>
+
+<p>
+Feeling bored or losing focus?
+Click the button and get a quick activity.
+</p>
+
+
+<button onclick="showEmergencySuggestion()">
+
+    Get Suggestion 🚀
+
+</button>
+
+
+
+<div id="emergencySuggestion"></div>
+
+
+</div>
+
+        <footer>
+      <h3>Focus Today, Succeed Tomorrow</h3>
+      <p>Helping students stay focused and achieve their goals.</p>
+          </div>
+        <div class="text-center">
+        Designed & Developed by <strong>Mohamed Wael</strong>
+    </div>
+    </footer>
+
+
+<script>
+
+
+const emergencySuggestions = [
+
+
+{
+
+icon:"🚶",
+
+title:"Take a Short Walk",
+
+text:"Walk for two minutes to refresh your body and improve your focus."
+
+},
+
+
+
+{
+
+icon:"💧",
+
+title:"Drink Water",
+
+text:"Drink some water to stay active and improve your concentration."
+
+},
+
+
+
+{
+
+icon:"🧘",
+
+title:"Stretch Your Body",
+
+text:"Do simple stretching exercises to relax your muscles."
+
+},
+
+
+
+{
+
+icon:"🌬️",
+
+title:"Deep Breathing",
+
+text:"Take slow deep breaths for one minute and calm your mind."
+
+},
+
+
+
+{
+
+icon:"🎧",
+
+title:"Listen to Calm Music",
+
+text:"Listen to relaxing music for a few minutes before returning to study."
+
+},
+
+
+
+{
+
+icon:"📝",
+
+title:"Plan Your Tasks",
+
+text:"Write your next study goals and organize your upcoming tasks."
+
+},
+
+
+
+{
+
+icon:"🌳",
+
+title:"Get Fresh Air",
+
+text:"Open a window or go outside for fresh air and new energy."
+
+},
+
+
+
+{
+
+icon:"😊",
+
+title:"Positive Thinking",
+
+text:"Relax, motivate yourself, and return to studying with confidence."
+
+}
+
+
+];
+
+
+
+
+
+function showEmergencySuggestion(){
+
+
+let randomIndex = Math.floor(
+
+Math.random() * emergencySuggestions.length
+
+);
+
+
+
+let suggestion = emergencySuggestions[randomIndex];
+
+
+
+document.getElementById("emergencySuggestion").innerHTML = `
+
+
+<div class="suggestion">
+
+
+<span>${suggestion.icon}</span>
+
+
+<h3>${suggestion.title}</h3>
+
+
+<p>${suggestion.text}</p>
+
+
+</div>
+
+
+`;
+
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
