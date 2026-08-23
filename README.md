@@ -4,7 +4,7 @@ A modern and minimal **Pomodoro Focus Timer** built with HTML, CSS, and JavaScri
 
 ## 🌐 Live Demo
 
-**https://mohamedwael-dev.github.io/Focus-Timer/**
+**https://mohamedwael-dev.github.io/FocusTimer/**
 
 ---
 
